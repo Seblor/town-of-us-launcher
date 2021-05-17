@@ -7,25 +7,25 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** Seblor, twitch-downloader, twitter_handle, email, project_title, project_description
+*** Seblor, town-of-us-launcher, twitter_handle, email, project_title, project_description
 -->
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!-- <a href="https://github.com/Seblor/twitch-downloader">
+  <!-- <a href="https://github.com/Seblor/town-of-us-launcher">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
   <h3 align="center">Town of Us Launcher</h3>
 
   <p align="center">
-    A launcher for the Town of Use mod for Among Us
+    A launcher for the Town of Us mod for Among Us
     <br />
-    <a href="https://github.com/Seblor/twitch-downloader/issues">Report Bug</a>
+    <a href="https://github.com/Seblor/town-of-us-launcher/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Seblor/twitch-downloader/issues">Request Feature</a>
+    <a href="https://github.com/Seblor/town-of-us-launcher/issues">Request Feature</a>
   </p>
 </p>
 
@@ -39,7 +39,7 @@ This program provides a simple, out-of-the-box way to install and run the Town o
 <!-- GETTING STARTED -->
 ## Usage
 
-Go to the [last release page](https://github.com/Seblor/twitch-downloader/releases/latest), download the executable file, and simply run it !
+Go to the [last release page](https://github.com/Seblor/town-of-us-launcher/releases/latest), download the executable file, and simply run it !
 
 The Steam version of the game will still be the base game (without any mods installed), and this program will run the modded game, and handle the update if it detects a new version of the game installed by Steam or a new version of the mod. (Please ensure that the Among Us game is always up to date to properly handle the update)
 
@@ -57,4 +57,4 @@ If any problem occurs, try the following steps:
 3. Check the game files integrity ([you can click here to do that](steam://validate/945360))
 4. run the launcher again.
 
-If that didn't work, please [open an issue](https://github.com/Seblor/twitch-downloader/issues)
+If that didn't work, please [open an issue](https://github.com/Seblor/town-of-us-launcher/issues)
