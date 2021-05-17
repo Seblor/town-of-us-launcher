@@ -1,6 +1,6 @@
 {
   "name": "town-of-us-launcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A launcher for the Town of Us mod for Among Us",
   "main": "app.js",
   "bin": "bin.js",
