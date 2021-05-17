@@ -1,6 +1,36 @@
 const { spawn } = require('child_process')
 const path = require('path')
 
+module.exports.hideSelf = () => {
+  let psScript = `
+Add-Type -Name Window -Namespace Console -MemberDefinition '
+[DllImport("Kernel32.dll")]
+public static extern IntPtr GetConsoleWindow();
+
+[DllImport("user32.dll")]
+public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);
+'
+
+$consolePtr = [Console.Window]::GetConsoleWindow()
+#0 hide
+[Console.Window]::ShowWindow($consolePtr, 0)
+`
+
+  const child = spawn('powershell.exe', [psScript])
+
+  let output = ''
+
+  return new Promise(resolve => {
+    child.stdout.on('data', (data) => {
+      output += data.toString()
+    })
+    child.on('exit', () => {
+      resolve(output.trim())
+    })
+    child.stdin.end()
+  })
+}
+
 function openFolder() {
   let psScript = `
 Function Select-FolderDialog
