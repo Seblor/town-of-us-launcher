@@ -1,6 +1,8 @@
 const functions = require('./src/app') /* the current working directory so that means main.js because of package.json */
 const { launchTownOfUs, hideSelf } = require('./src/win32')
 
+const { checkForUpdate } = require('./src/autoupdate');
+
 async function installTownOfUs() {
   console.clear()
   try {
@@ -20,4 +22,6 @@ async function installTownOfUs() {
   }
 }
 
-installTownOfUs()
+checkForUpdate().then(() => {
+  installTownOfUs()
+})

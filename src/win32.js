@@ -1,4 +1,5 @@
 const { spawn } = require('child_process')
+const fs = require('fs')
 const path = require('path')
 
 module.exports.hideSelf = () => {
@@ -191,5 +192,25 @@ module.exports.killProgram = async (programName = 'Among Us.exe') => {
       resolve(output)
     })
     child.stdin.end()
+  })
+}
+
+/**
+ * Closes the process and replaces the current executable with the one provided
+ * @param {string} sourceFile
+ */
+module.exports.replaceExecutable = (sourceFile) => {
+
+  let psScript = `powershell -windowstyle hidden Start-Sleep -s 1
+DEL "${process.execPath}"
+MOVE "${process.execPath}.new" "${process.execPath}"
+start /i explorer.exe ${process.execPath}`.replace(/\n/g, ' & ') // Running from explorer.exe to avoid issue https://github.com/vercel/pkg/issues/1057
+
+  const child = spawn('cmd.exe', ['/c', psScript], { cwd: process.cwd(), shell: true, detached: true, windowsHide: true })
+
+  return new Promise(() => {
+    setImmediate(() => {
+      process.exit()
+    })
   })
 }
